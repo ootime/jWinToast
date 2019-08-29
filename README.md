@@ -4,8 +4,7 @@ jWinToast is a java package for creating native Windows notifications,is a java 
 
 ## Prerequisites
 
-There are no requirements at the moment.
-
+Install Visual Studio and configure current environment variables
 ## Documentation
 
 You may find some limited documentation on [WinToast Page](https://github.com/mohabouje/WinToast)
