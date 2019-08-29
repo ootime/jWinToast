@@ -1,4 +1,4 @@
-package com.jwintoast.presets;
+package io.github.accia.presets;
 
 import org.bytedeco.javacpp.annotation.Namespace;
 import org.bytedeco.javacpp.annotation.Platform;
@@ -8,8 +8,8 @@ import org.bytedeco.javacpp.tools.InfoMap;
 import org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
-        target = "com.jwintoast",
-        global = "com.jwintoast.global.WinToastLib",
+        target = "io.github.accia.jwintoast",
+        global = "WinToastLib",
         value = {
                 @Platform(
 //                        define = "NDEBUG",

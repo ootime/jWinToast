@@ -1,11 +1,12 @@
-package com.jwintoast;
+package io.github.accia;
 
+import io.github.accia.presets.WinToastLib;
 import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.Loader;
 import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.annotation.*;
 
-@Properties(inherit = com.jwintoast.presets.WinToastLib.class)
+@Properties(inherit = WinToastLib.class)
 @Namespace("WinToastLib")
 public class WinToastTemplate extends Pointer {
     static { Loader.load(); }

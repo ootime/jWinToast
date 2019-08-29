@@ -1,12 +1,9 @@
 
-import com.jwintoast.IWinToastHandler;
-import com.jwintoast.WinToast;
-import com.jwintoast.WinToastTemplate;
+import io.github.accia.IWinToastHandler;
+import io.github.accia.WinToast;
+import io.github.accia.WinToastTemplate;
 import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.IntPointer;
-
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
 
 public class test {
     public static void main(String[] args)  {

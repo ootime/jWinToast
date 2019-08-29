@@ -1,5 +1,6 @@
-package com.jwintoast;
+package io.github.accia;
 
+import io.github.accia.presets.WinToastLib;
 import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.IntPointer;
 import org.bytedeco.javacpp.Loader;
@@ -7,7 +8,7 @@ import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.annotation.*;
 
 @NoOffset
-@Properties(inherit = com.jwintoast.presets.WinToastLib.class)
+@Properties(inherit = WinToastLib.class)
 public class WinToast  extends Pointer {
     static {
         Loader.load();
