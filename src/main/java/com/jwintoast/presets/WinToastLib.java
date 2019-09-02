@@ -12,19 +12,20 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         global = "com.jwintoast.global.WinToastLib",
         value = {
                 @Platform(
-//                        define = "NDEBUG",
+//                       define = "NDEBUG",
                         value = {
                                 "windows-x86",
                                 "windows-x86_64"
                         },
 //                        cinclude = "wintoastlib.h",
-                        include ="wintoastlib.cpp",
-                        includepath ={"D:\\Project\\JAVACPP_Project\\wintosat\\cpp\\WinToast-master\\src",
-                                "/winrt",
-                                "/um",
-                                "/shared",
-                                 "/ucrt",
-                        "/cppwinrt",
+                        preload = "windowsapp",
+                        include ={"wintoastlib.cpp","DesktopNotificationManagerCompat.cpp"},
+                        includepath ={"D:\\Project\\VisualStudio_Project\\wintoast\\wintoast",
+//                                "/winrt",
+                                "D:/Windows Kits/10/Include/10.0.17763.0/um",
+                                "D:/Windows Kits/10/Include/10.0.17763.0/shared",
+                                 "D:/Windows Kits/10/Include/10.0.17763.0/ucrt",
+                        "D:/Windows Kits/10/Include/10.0.17763.0/cppwinrt",
                         "D:\\DevelopmentTool\\MicrosoftVisualStudio\\VisualStudio2017\\VC\\Tools\\MSVC\\14.16.27023\\include"}
 //                        ,library = "jniWinToastLib"
                 )

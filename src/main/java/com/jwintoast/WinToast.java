@@ -1,9 +1,6 @@
 package com.jwintoast;
 
-import org.bytedeco.javacpp.CharPointer;
-import org.bytedeco.javacpp.IntPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
+import org.bytedeco.javacpp.*;
 import org.bytedeco.javacpp.annotation.*;
 
 @NoOffset
@@ -20,6 +17,8 @@ public class WinToast  extends Pointer {
             @Const @ByRef WinToastTemplate winToastTemplate,
             IWinToastHandler iWinToastHandler,
            @Cast("WinToastLib::WinToast::WinToastError *") IntPointer erro);
+
+    public native void notifier2(@Cast("bool *") boolean sessed,@ByRef HString hString);
 
     public native void setAppName(@Const @StdWString CharPointer name);
 
