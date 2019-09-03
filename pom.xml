@@ -55,6 +55,66 @@
                     <includePaths>
 <!--                        <includePath>${project.build.sourceDirectory}</includePath>-->
 <!--                        <includePath>${basedir}/cppbuild/${javacpp.platform}/include/</includePath>-->
+                        <includePath>D:\Windows Kits\10/Include/10.0.17763.0/</includePath>
+                    </includePaths>
+<!--                    <linkPath>${basedir}/cppbuild/${javacpp.platform}/lib/</linkPath>-->
+<!--                    <preloadPath>${basedir}/cppbuild/${javacpp.platform}/bin/</preloadPath>-->
+                    <deleteJniFiles>false</deleteJniFiles>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>javacpp.parser</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${javacpp.parser.skip}</skip>
+                            <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+                            <classOrPackageName>io.github.accia.jwintoast.*</classOrPackageName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>javacpp.compiler</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${javacpp.compiler.skip}</skip>
+                            <classOrPackageNames>
+                                <classOrPackageName>io.github.accia.jwintoast.*</classOrPackageName>
+                                <!--<classOrPackageName>com.wintosat.global.WinToastLib</classOrPackageName>-->
+                                <!--<classOrPackageName>com.wintosat.IWinToastHandler</classOrPackageName>-->
+                                <!--<classOrPackageName>com.wintosat.WinToastTemplate</classOrPackageName>-->
+                            </classOrPackageNames>
+                            <copyLibs>true</copyLibs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <plugins>
+            <plugin>
+                <groupId>org.bytedeco</groupId>
+                <artifactId>javacpp</artifactId>
+                <version>1.5.1</version>
+                <configuration>
+                    <properties>${javacpp.platform}</properties>
+                    <propertyKeysAndValues>
+                        <property>
+                            <name>platform.root</name>
+                            <value>${javacpp.platform.root}</value>
+                        </property>
+                        <property>
+                            <name>platform.compiler</name>
+                            <value>${javacpp.platform.compiler}</value>
+                        </property>
+                    </propertyKeysAndValues>
+                    <classPath>${project.build.outputDirectory}</classPath>
+                    <includePaths>
+<!--                        <includePath>${project.build.sourceDirectory}</includePath>-->
+<!--                        <includePath>${basedir}/cppbuild/${javacpp.platform}/include/</includePath>-->
 <!--                        <includePath>D:/Windows Kits/10/Include/10.0.17763.0/</includePath>-->
                     </includePaths>
 <!--                    <linkPath>${basedir}/cppbuild/${javacpp.platform}/lib/</linkPath>-->
@@ -111,7 +171,7 @@
                             <include>**/*.dll</include>
                         </includes>
                         <targetPath>
-                            ${project.build.outputDirectory}/com/jwintoast
+                            ${project.build.outputDirectory}/icu/ootime/jwintoast
                         </targetPath>
                     </resource>
                 </resources>
