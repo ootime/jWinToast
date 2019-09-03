@@ -36,6 +36,8 @@ public class WinToastTemplate extends Pointer {
 
     public native void LoadStringToXml(@Const @StdWString CharPointer strxml);
 
+    public native void setInitNotificationData(@ByRef HStringMap hStringMap);
+
     @Override public WinToastTemplate position(long position) {
         return (WinToastTemplate)super.position(position);
     }

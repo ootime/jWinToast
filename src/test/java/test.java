@@ -53,18 +53,21 @@ public class test {
 //            winToastTemplate.setImagePath(new CharPointer("C:\\Users\\TK\\Desktop\\a.jpg"));
             winToastTemplate.setExpiration(10000);
             winToastTemplate.LoadStringToXml(new CharPointer("<toast><visual><binding template=\"ToastGeneric\"><text>Downloadingyourweeklyplaylist...</text><progress title=\"Weeklyplaylist\" value=\"{aavalue}\" valueStringOverride=\"{ddww}\" status=\"Downloading...\"/></binding></visual></toast>"));
-//            winToastTemplate.addAction(new CharPointer("是"));
+            HStringMap hStringMap4=new HStringMap();
+            hStringMap4.put(new HString(new CharPointer("ddww")),new HString(new CharPointer("10/90 20")));
+            winToastTemplate.setInitNotificationData(hStringMap4);
+            //            winToastTemplate.addAction(new CharPointer("是"));
 //            winToastTemplate.addAction(new CharPointer("否"));
             IntPointer intPointer=new IntPointer(0);
             winToast.setAppGroup(new CharPointer("ddd"));
             winToast.setAppTag(new CharPointer("aaa"));
-            winToast.showToast(winToastTemplate,iWinToastHandler,intPointer);
+            int uid=winToast.showToast(winToastTemplate,iWinToastHandler,intPointer);
             Thread.sleep(1000);
 //            coventHString coventHString=new coventHString();
 
             HStringMap hStringMap=new HStringMap();
-            hStringMap.put(new HString(new CharPointer("aavalue")),new HString(new CharPointer("1")));
-            hStringMap.put(new HString(new CharPointer("ddww")),new HString(new CharPointer("1ssss")));
+            hStringMap.put(new HString(new CharPointer("aavalue")),new HString(new CharPointer("0.1")));
+//            hStringMap.put(new HString(new CharPointer("ddww")),new HString(new CharPointer("1ssss")));
 
             IntPointer intPointer1=new IntPointer(0);
             System.out.println(winToast.update(hStringMap,intPointer1));
@@ -72,6 +75,12 @@ public class test {
             System.out.println("返回错误:"+ winToast.strerror(intPointer.get()).getString());
             System.out.println(winToast.address());
 
+            Thread.sleep(2000);
+           HStringMap hStringMap2=new HStringMap();
+            hStringMap2.put(new HString(new CharPointer("aavalue")),new HString(new CharPointer("1")));
+            hStringMap2.put(new HString(new CharPointer("ddww")),new HString(new CharPointer("1ssss")));
+            System.out.println(winToast.update(hStringMap2,intPointer1));
+//            System.out.println(winToast.hideToast(uid));
             Thread.sleep(15000);
 
             System.out.println("未意外推出");

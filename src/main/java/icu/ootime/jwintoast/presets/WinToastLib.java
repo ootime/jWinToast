@@ -18,14 +18,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                                 "windows-x86_64"
                         },
 //                        cinclude = "wintoastlib.h",
-                        include ={"wintoastlib.cpp","DesktopNotificationManagerCompat.cpp"},
-                        includepath ={"D:\\Project\\WinToastWrapper\\WinToastWrapper",
-//                                "/winrt",
-                                "D:/Windows Kits/10/Include/10.0.17763.0/um",
-                                "D:/Windows Kits/10/Include/10.0.17763.0/shared",
-                                 "D:/Windows Kits/10/Include/10.0.17763.0/ucrt",
-                        "D:/Windows Kits/10/Include/10.0.17763.0/cppwinrt",
-                        "D:\\DevelopmentTool\\MicrosoftVisualStudio\\VisualStudio2017\\VC\\Tools\\MSVC\\14.16.27023\\include"}
+                        include ={"wintoastlib.cpp","DesktopNotificationManagerCompat.cpp"}
+//                        includepath ={"D:\\Project\\WinToastWrapper\\WinToastWrapper",
+////                                "/winrt",
+//                                "D:/Windows Kits/10/Include/10.0.17763.0/um",
+//                                "D:/Windows Kits/10/Include/10.0.17763.0/shared",
+//                                 "D:/Windows Kits/10/Include/10.0.17763.0/ucrt",
+//                        "D:/Windows Kits/10/Include/10.0.17763.0/cppwinrt",
+//                        "D:\\DevelopmentTool\\MicrosoftVisualStudio\\VisualStudio2017\\VC\\Tools\\MSVC\\14.16.27023\\include"}
 //                        ,library = "jniWinToastLib"
                 )
         }
