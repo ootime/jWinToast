@@ -1,4 +1,4 @@
-package com.jwintoast;
+package io.github.accia;
 
 
 import org.bytedeco.javacpp.CharPointer;
@@ -8,7 +8,7 @@ import org.bytedeco.javacpp.annotation.Name;
 import org.bytedeco.javacpp.annotation.Properties;
 import org.bytedeco.javacpp.annotation.StdWString;
 
-@Properties(inherit = com.jwintoast.presets.WinToastLib.class)
+@Properties(inherit = io.github.accia.presets.WinToastLib.class)
 @Name("winrt::hstring")
 public class HString extends Pointer {
     static {

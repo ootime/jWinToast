@@ -1,4 +1,4 @@
-package com.jwintoast;
+package io.github.accia;
 
 import io.github.accia.presets.WinToastLib;
 import org.bytedeco.javacpp.CharPointer;
