@@ -1,11 +1,19 @@
+<<<<<<< HEAD:src/main/java/io/github/accia/HStringMap.java
 package io.github.accia;;
+=======
+package icu.ootime.jwintoast;
+>>>>>>> develop:src/main/java/icu/ootime/jwintoast/HStringMap.java
 
-import org.bytedeco.javacpp.CharPointer;
+import icu.ootime.jwintoast.presets.WinToastLib;
 import org.bytedeco.javacpp.Loader;
 import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.annotation.*;
 
+<<<<<<< HEAD:src/main/java/io/github/accia/HStringMap.java
 @Properties(inherit = io.github.accia.presets.WinToastLib.class)
+=======
+@Properties(inherit = WinToastLib.class)
+>>>>>>> develop:src/main/java/icu/ootime/jwintoast/HStringMap.java
 @Name("std::map<winrt::hstring, winrt::hstring>")
 public class HStringMap extends Pointer {
     static { Loader.load(); }

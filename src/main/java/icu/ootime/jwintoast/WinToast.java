@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/main/java/io/github/accia/WinToast.java
 package io.github.accia;
 
 import io.github.accia.presets.WinToastLib;
@@ -5,6 +6,11 @@ import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.IntPointer;
 import org.bytedeco.javacpp.Loader;
 import org.bytedeco.javacpp.Pointer;
+=======
+package icu.ootime.jwintoast;
+
+import icu.ootime.jwintoast.presets.WinToastLib;
+>>>>>>> develop:src/main/java/icu/ootime/jwintoast/WinToast.java
 import org.bytedeco.javacpp.*;
 import org.bytedeco.javacpp.annotation.*;
 
