@@ -2,8 +2,11 @@
 
 package icu.ootime.jwintoast.global;
 
+import icu.ootime.jwintoast.*;
 
+import java.nio.*;
 import org.bytedeco.javacpp.*;
+import org.bytedeco.javacpp.annotation.*;
 
 public class WinToastLib extends icu.ootime.jwintoast.presets.WinToastLib {
     static { Loader.load(); }
@@ -30,7 +33,9 @@ public class WinToastLib extends icu.ootime.jwintoast.presets.WinToastLib {
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+
 // #include "wintoastlib.h"
+// #include "DesktopNotificationManagerCompat.h"
 // #include <memory>
 // #include <assert.h>
 // #include <unordered_map>
@@ -55,6 +60,29 @@ public class WinToastLib extends icu.ootime.jwintoast.presets.WinToastLib {
 
     // Function load a function from library
 
+    
+
+    
+
+    
+
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
 
 
@@ -107,16 +135,7 @@ public class WinToastLib extends icu.ootime.jwintoast.presets.WinToastLib {
 
 
 
-
-
-
-
-
-
-
-
-
-
+//
 
 
 
@@ -186,6 +205,72 @@ public class WinToastLib extends icu.ootime.jwintoast.presets.WinToastLib {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//increase
+
+
+
+
+// Parsed from DesktopNotificationManagerCompat.cpp
+
+// ******************************************************************
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THE CODE IS PROVIDED �AS IS? WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+// ******************************************************************
+// #pragma comment (lib, "windowsapp.lib")
+// #include "DesktopNotificationManagerCompat.h"
+// #include <appmodel.h>
+// #include <wrl\wrappers\corewrappers.h>
+
+// #define RETURN_IF_FAILED(hr) do { HRESULT _hrTemp = hr; if (FAILED(_hrTemp)) { return _hrTemp; } } while (false)
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
 
 

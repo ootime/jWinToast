@@ -18,7 +18,6 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                                 "windows-x86_64"
                         },
 //                        cinclude = "wintoastlib.h",
-                        preload = "windowsapp",
                         include ={"wintoastlib.cpp","DesktopNotificationManagerCompat.cpp"},
                         includepath ={"D:\\Project\\WinToastWrapper\\WinToastWrapper",
 //                                "/winrt",
@@ -35,6 +34,22 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 public class WinToastLib implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("WinToastLib").pointerTypes("WinToastLib").skip());
+
+        infoMap.put(new Info("DesktopNotificationManagerCompat::RegisterComServer",
+                "DesktopNotificationManagerCompat::EnsureRegistered",
+                "DesktopNotificationManagerCompat::IsRunningAsUwp",
+                "DesktopNotificationManagerCompat::s_registeredAumidAndComServer",
+                "DesktopNotificationManagerCompat::s_aumid",
+                "DesktopNotificationManagerCompat::s_registeredActivator",
+                "DesktopNotificationManagerCompat::s_hasCheckedIsRunningAsUwp",
+                "DesktopNotificationManagerCompat::s_isRunningAsUwp",
+                "DesktopNotificationManagerCompat::RegisterAumidAndComServer",
+                "DesktopNotificationManagerCompat::RegisterActivator",
+                "DesktopNotificationManagerCompat::CreateToastNotifier",
+                "DesktopNotificationManagerCompat::CreateXmlDocumentFromString",
+                "DesktopNotificationManagerCompat::CreateToastNotification",
+                "DesktopNotificationManagerCompat::get_History",
+                "DesktopNotificationManagerCompat::CanUseHttpImages").skip());
         infoMap.put(new Info(
                 "DllImporter::f_SetCurrentProcessExplicitAppUserModelID"
                 ,"DllImporter::f_PropVariantToString",
