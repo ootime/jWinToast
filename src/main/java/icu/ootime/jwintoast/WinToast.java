@@ -1,10 +1,11 @@
-package com.jwintoast;
+package icu.ootime.jwintoast;
 
+import icu.ootime.jwintoast.presets.WinToastLib;
 import org.bytedeco.javacpp.*;
 import org.bytedeco.javacpp.annotation.*;
 
 @NoOffset
-@Properties(inherit = com.jwintoast.presets.WinToastLib.class)
+@Properties(inherit = WinToastLib.class)
 public class WinToast  extends Pointer {
     static {
         Loader.load();

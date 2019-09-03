@@ -1,5 +1,5 @@
 
-import com.jwintoast.*;
+import icu.ootime.jwintoast.*;
 import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.IntPointer;
 

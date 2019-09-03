@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jwintoast</groupId>
+    <groupId>icu.ootime</groupId>
     <artifactId>jwintoast</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
@@ -75,7 +75,7 @@
                         <configuration>
                             <skip>${javacpp.parser.skip}</skip>
                             <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
-                            <classOrPackageName>com.jwintoast.presets.*</classOrPackageName>
+                            <classOrPackageName>icu.ootime.presets.*</classOrPackageName>
 
                         </configuration>
                     </execution>
@@ -88,7 +88,7 @@
                         <configuration>
                             <skip>${javacpp.compiler.skip}</skip>
                             <classOrPackageNames>
-                                <classOrPackageName>com.jwintoast.*</classOrPackageName>
+                                <classOrPackageName>icu.ootime.jwintoast.*</classOrPackageName>
                                 <!--<classOrPackageName>com.wintosat.global.WinToastLib</classOrPackageName>-->
                                 <!--<classOrPackageName>com.wintosat.IWinToastHandler</classOrPackageName>-->
                                 <!--<classOrPackageName>com.wintosat.WinToastTemplate</classOrPackageName>-->

@@ -1,11 +1,11 @@
-package com.jwintoast;
+package icu.ootime.jwintoast;
 
-import org.bytedeco.javacpp.CharPointer;
+import icu.ootime.jwintoast.presets.WinToastLib;
 import org.bytedeco.javacpp.Loader;
 import org.bytedeco.javacpp.Pointer;
 import org.bytedeco.javacpp.annotation.*;
 
-@Properties(inherit = com.jwintoast.presets.WinToastLib.class)
+@Properties(inherit = WinToastLib.class)
 @Name("std::map<winrt::hstring, winrt::hstring>")
 public class HStringMap extends Pointer {
     static { Loader.load(); }
