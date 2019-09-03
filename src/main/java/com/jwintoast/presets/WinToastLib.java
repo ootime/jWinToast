@@ -20,7 +20,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 //                        cinclude = "wintoastlib.h",
                         preload = "windowsapp",
                         include ={"wintoastlib.cpp","DesktopNotificationManagerCompat.cpp"},
-                        includepath ={"D:\\Project\\VisualStudio_Project\\wintoast\\wintoast",
+                        includepath ={"D:\\Project\\WinToastWrapper\\WinToastWrapper",
 //                                "/winrt",
                                 "D:/Windows Kits/10/Include/10.0.17763.0/um",
                                 "D:/Windows Kits/10/Include/10.0.17763.0/shared",

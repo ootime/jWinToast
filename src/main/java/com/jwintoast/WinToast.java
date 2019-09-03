@@ -18,9 +18,15 @@ public class WinToast  extends Pointer {
             IWinToastHandler iWinToastHandler,
            @Cast("WinToastLib::WinToast::WinToastError *") IntPointer erro);
 
-    public native void notifier2(@Cast("bool *") boolean sessed,@ByRef HString hString);
+//    public native void notifier2(@Cast("bool *") boolean sessed,@ByRef HString hString);
 
     public native void setAppName(@Const @StdWString CharPointer name);
+
+    public native void setAppTag(@Const @StdWString CharPointer tagname);
+
+    public native void setAppGroup(@Const @StdWString CharPointer groupname);
+
+    public native  @Cast("::NotificationUpdateResult") int update(@ByRef  HStringMap hStringMap, @Cast("WinToastLib::WinToast::WinToastError *") IntPointer erro);
 
     public native @StdWString CharPointer configureAUMI(@Const @StdWString CharPointer companyName,
                                                         @Const @StdWString CharPointer productName,
