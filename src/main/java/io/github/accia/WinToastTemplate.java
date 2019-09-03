@@ -34,6 +34,8 @@ public class WinToastTemplate extends Pointer {
 
     public native  void setExpiration(int millisecondsFromNow);
 
+    public native void LoadStringToXml(@Const @StdWString CharPointer strxml);
+
     @Override public WinToastTemplate position(long position) {
         return (WinToastTemplate)super.position(position);
     }

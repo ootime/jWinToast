@@ -1,4 +1,5 @@
 
+import com.jwintoast.*;
 import io.github.accia.IWinToastHandler;
 import io.github.accia.WinToast;
 import io.github.accia.WinToastTemplate;
@@ -48,14 +49,29 @@ public class test {
 //            winToastTemplate.addAction(new CharPointer("我是按钮啊"));
 //            winToastTemplate.addAction(new CharPointer("我是按钮啊"));
 //            winToastTemplate.setDuration(WinToastTemplate.Duration.Short);
-            winToastTemplate.setTextField(new CharPointer("关于2019年中秋节放假安排的通知根据国务院办公厅通知精神，现将2019年中秋节放假安排通知如下:9月13日（星期五）放假调休，与周末连休。请广大市民提前安排好工作生活，节日期间注意安全，度过一个欢乐、祥和的节日假期。"),WinToastTemplate.TextField.SecondLine);
-            winToastTemplate.setImagePath(new CharPointer("C:\\Users\\TK\\Desktop\\a.jpg"));
-            winToastTemplate.addAction(new CharPointer("是"));
-            winToastTemplate.addAction(new CharPointer("否"));
+//            winToastTemplate.setTextField(new CharPointer("关于2019年中秋节放假安排的通知根据国务院办公厅通知精神，现将2019年中秋节放假安排通知如下:9月13日（星期五）放假调休，与周末连休。请广大市民提前安排好工作生活，节日期间注意安全，度过一个欢乐、祥和的节日假期。"),WinToastTemplate.TextField.SecondLine);
+//            winToastTemplate.setImagePath(new CharPointer("C:\\Users\\TK\\Desktop\\a.jpg"));
+            winToastTemplate.setExpiration(10000);
+            winToastTemplate.LoadStringToXml(new CharPointer("<toast><visual><binding template=\"ToastGeneric\"><text>Downloadingyourweeklyplaylist...</text><progress title=\"Weeklyplaylist\" value=\"{aavalue}\" valueStringOverride=\"{ddww}\" status=\"Downloading...\"/></binding></visual></toast>"));
+//            winToastTemplate.addAction(new CharPointer("是"));
+//            winToastTemplate.addAction(new CharPointer("否"));
             IntPointer intPointer=new IntPointer(0);
+            winToast.setAppGroup(new CharPointer("ddd"));
+            winToast.setAppTag(new CharPointer("aaa"));
             winToast.showToast(winToastTemplate,iWinToastHandler,intPointer);
+            Thread.sleep(1000);
+//            coventHString coventHString=new coventHString();
+
+            HStringMap hStringMap=new HStringMap();
+            hStringMap.put(new HString(new CharPointer("aavalue")),new HString(new CharPointer("1")));
+            hStringMap.put(new HString(new CharPointer("ddww")),new HString(new CharPointer("1ssss")));
+
+            IntPointer intPointer1=new IntPointer(0);
+            System.out.println(winToast.update(hStringMap,intPointer1));
+            System.out.println(intPointer1.get());
             System.out.println("返回错误:"+ winToast.strerror(intPointer.get()).getString());
             System.out.println(winToast.address());
+
             Thread.sleep(15000);
 
             System.out.println("未意外推出");
