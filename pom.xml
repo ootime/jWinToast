@@ -13,10 +13,12 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <javacpp.platform.root></javacpp.platform.root>
         <javacpp.cppbuild.skip>false</javacpp.cppbuild.skip> <!-- To skip execution of cppbuild.sh: -Djavacpp.cppbuild.skip=true -->
-        <javacpp.parser.skip>false</javacpp.parser.skip>     <!-- To skip header file parsing phase: -Djavacpp.parser.skip=true  -->
+        <javacpp.parser.skip>true</javacpp.parser.skip>     <!-- To skip header file parsing phase: -Djavacpp.parser.skip=true  -->
         <javacpp.compiler.skip>false</javacpp.compiler.skip> <!-- To skip native compilation phase: -Djavacpp.compiler.skip=true -->
         <javacpp.platform.compiler></javacpp.platform.compiler>
-<!--        <javacpp.platform>windows-x86_64</javacpp.platform>-->
+        <win10.SDK.Path>C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0</win10.SDK.Path>
+        <winToastWrapperProjectPath>D:\Project\WinToastWrapper\WinToastWrapper</winToastWrapperProjectPath>
+        <javacpp.platform>windows-x86_64</javacpp.platform>
     </properties>
     <dependencies>
         <dependency>
@@ -33,73 +35,78 @@
         </dependency>
     </dependencies>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.bytedeco</groupId>-->
-<!--                <artifactId>javacpp</artifactId>-->
-<!--                <version>1.5.1</version>-->
-<!--                <configuration>-->
-<!--                    <properties>${javacpp.platform}</properties>-->
-<!--                    <propertyKeysAndValues>-->
-<!--                        <property>-->
-<!--                            <name>platform.root</name>-->
-<!--                            <value>${javacpp.platform.root}</value>-->
-<!--                        </property>-->
-<!--                        <property>-->
-<!--                            <name>platform.compiler</name>-->
-<!--                            <value>${javacpp.platform.compiler}</value>-->
-<!--                        </property>-->
-<!--                    </propertyKeysAndValues>-->
-<!--                    <classPath>${project.build.outputDirectory}</classPath>-->
-<!--                    <includePaths>-->
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.bytedeco</groupId>-->
+                <!--<artifactId>javacpp</artifactId>-->
+                <!--<version>1.5.1</version>-->
+                <!--<configuration>-->
+                    <!--<properties>${javacpp.platform}</properties>-->
+                    <!--<propertyKeysAndValues>-->
+                        <!--<property>-->
+                            <!--<name>platform.root</name>-->
+                            <!--<value>${javacpp.platform.root}</value>-->
+                        <!--</property>-->
+                        <!--<property>-->
+                            <!--<name>platform.compiler</name>-->
+                            <!--<value>${javacpp.platform.compiler}</value>-->
+                        <!--</property>-->
+                    <!--</propertyKeysAndValues>-->
+                    <!--<classPath>${project.build.outputDirectory}</classPath>-->
+                    <!--<includePaths>-->
+                        <!--<includePath>${win10.SDK.Path}/um</includePath>-->
+                        <!--<includePath>${win10.SDK.Path}/shared</includePath>-->
+                        <!--<includePath>${win10.SDK.Path}/ucrt</includePath>-->
+                        <!--<includePath>${win10.SDK.Path}/cppwinrt</includePath>-->
+                        <!--<includePath>${winToastWrapperProjectPath}</includePath>-->
 <!--&lt;!&ndash;                        <includePath>${project.build.sourceDirectory}</includePath>&ndash;&gt;-->
 <!--&lt;!&ndash;                        <includePath>${basedir}/cppbuild/${javacpp.platform}/include/</includePath>&ndash;&gt;-->
 <!--&lt;!&ndash;                        <includePath>D:/Windows Kits/10/Include/10.0.17763.0/</includePath>&ndash;&gt;-->
-<!--                    </includePaths>-->
+                    <!--</includePaths>-->
 <!--&lt;!&ndash;                    <linkPath>${basedir}/cppbuild/${javacpp.platform}/lib/</linkPath>&ndash;&gt;-->
 <!--&lt;!&ndash;                    <preloadPath>${basedir}/cppbuild/${javacpp.platform}/bin/</preloadPath>&ndash;&gt;-->
-<!--                    <deleteJniFiles>false</deleteJniFiles>-->
-<!--                    <compilerOptions>-->
-<!--                        <compilerOption>/std:c++17</compilerOption>-->
+                    <!--<deleteJniFiles>false</deleteJniFiles>-->
+                    <!--<compilerOptions>-->
+                        <!--<compilerOption>/std:c++17</compilerOption>-->
 <!--&lt;!&ndash;                        <compilerOption>/EHsc</compilerOption>&ndash;&gt;-->
-<!--                    </compilerOptions>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>javacpp.parser</id>-->
-<!--                        <phase>generate-sources</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>build</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <skip>${javacpp.parser.skip}</skip>-->
-<!--                            <outputDirectory>${project.build.sourceDirectory}</outputDirectory>-->
-<!--                            <classOrPackageName>icu.ootime.jwintoast.presets.*</classOrPackageName>-->
+                    <!--</compilerOptions>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>javacpp.parser</id>-->
+                        <!--<phase>generate-sources</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>build</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<skip>${javacpp.parser.skip}</skip>-->
+                            <!--<outputDirectory>${project.build.sourceDirectory}</outputDirectory>-->
+                            <!--<classOrPackageName>icu.ootime.jwintoast.presets.*</classOrPackageName>-->
 
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>javacpp.compiler</id>-->
-<!--                        <phase>process-classes</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>build</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <skip>${javacpp.compiler.skip}</skip>-->
-<!--                            <classOrPackageNames>-->
-<!--                                <classOrPackageName>icu.ootime.jwintoast.*</classOrPackageName>-->
-<!--                                &lt;!&ndash;<classOrPackageName>com.wintosat.global.WinToastLib</classOrPackageName>&ndash;&gt;-->
-<!--                                &lt;!&ndash;<classOrPackageName>com.wintosat.IWinToastHandler</classOrPackageName>&ndash;&gt;-->
-<!--                                &lt;!&ndash;<classOrPackageName>com.wintosat.WinToastTemplate</classOrPackageName>&ndash;&gt;-->
-<!--                            </classOrPackageNames>-->
-<!--                            <copyLibs>true</copyLibs>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>javacpp.compiler</id>-->
+                        <!--<phase>process-classes</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>build</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<skip>${javacpp.compiler.skip}</skip>-->
+                            <!--<classOrPackageNames>-->
+                                <!--<classOrPackageName>icu.ootime.jwintoast.*</classOrPackageName>-->
+                                <!--&lt;!&ndash;<classOrPackageName>com.wintosat.global.WinToastLib</classOrPackageName>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<classOrPackageName>com.wintosat.IWinToastHandler</classOrPackageName>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<classOrPackageName>com.wintosat.WinToastTemplate</classOrPackageName>&ndash;&gt;-->
+                            <!--</classOrPackageNames>-->
+                            <!--<copyLibs>true</copyLibs>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
     <profiles>
         <profile>
             <id>runTimeBuild</id>
