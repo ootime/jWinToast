@@ -1,6 +1,6 @@
 # jWinToast
 jWinToast is a java package for creating native Windows notifications,is a java extension built around C++.
-[WinToastWrapper](https://github.com/ootime/WinToastWrapper) library.
+The c++ part comes from [WinToastWrapper](https://github.com/ootime/WinToastWrapper) library.
 
 ## Prerequisites
 
