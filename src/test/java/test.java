@@ -1,10 +1,7 @@
 
-import icu.ootime.jwintoast.*;
+import icu.ootime.jwintoast.javacpp.*;
 import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.IntPointer;
-
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
 
 public class test {
     public static void main(String[] args)  {

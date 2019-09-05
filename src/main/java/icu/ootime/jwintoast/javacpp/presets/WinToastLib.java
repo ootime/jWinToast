@@ -1,4 +1,4 @@
-package icu.ootime.jwintoast.presets;
+package icu.ootime.jwintoast.javacpp.presets;
 
 import org.bytedeco.javacpp.annotation.Namespace;
 import org.bytedeco.javacpp.annotation.Platform;
@@ -9,7 +9,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 
 @Properties(
         target = "icu.ootime.jwintoast",
-        global = "icu.ootime.jwintoast.global.WinToastLib",
+        global = "icu.ootime.jwintoast.javacpp.global.WinToastLib",
         value = {
                 @Platform(
 //                       define = "NDEBUG",
