@@ -2,9 +2,8 @@ package icu.ootime.jwintoast.javacpp;
 
 
 import icu.ootime.jwintoast.javacpp.presets.WinToastLib;
-import org.bytedeco.javacpp.CharPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
+import org.bytedeco.javacpp.*;
+import org.bytedeco.javacpp.annotation.Cast;
 import org.bytedeco.javacpp.annotation.Name;
 import org.bytedeco.javacpp.annotation.Properties;
 import org.bytedeco.javacpp.annotation.StdWString;
@@ -21,9 +20,17 @@ public class HString extends Pointer {
     public HString(@StdWString CharPointer charPointer){
         allocate(charPointer);
     }
+    public HString(String string){
+        this(new CharPointer(string));
+    }
     public  native void allocate();
     public  native void allocate(@StdWString CharPointer charPointer);
 
+    public native @Cast("wchar_t *")
+    CharPointer  c_str();
 
-
+    @Override
+    public String toString() {
+        return this.c_str().getString();
+    }
 }
