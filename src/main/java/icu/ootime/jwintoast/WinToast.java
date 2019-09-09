@@ -1,28 +1,14 @@
 package icu.ootime.jwintoast;
 
-import icu.ootime.jwintoast.javacpp.IWinToastHandler;
-import icu.ootime.jwintoast.javacpp.WinToastTemplate;
 
-public class WinToast implements Toast {
-    private icu.ootime.jwintoast.javacpp.WinToast jWinToast;
-    private WinToastTemplate jWinToastTemplate;
-    public WinToast(icu.ootime.jwintoast.javacpp.WinToast toast,WinToastTemplate template){
-        jWinToast=toast;
-        this.jWinToastTemplate=template;
-    }
-    @Override
-    public boolean show() {
-//        this.jWinToast.showToast();
-        return false;
-    }
+public interface WinToast {
 
-    @Override
-    public boolean hide() {
-        return false;
-    }
-
-    @Override
-    public boolean update() {
-        return false;
-    }
+    void setAppName(String appName);
+    void setAppTag(String tag);
+    void setAppGroup(String group);
+    void setAppUserModelId(String appUserModelId);
+    void clear();
+    boolean hideToast(int id);
+    void initialize();
+    String getError(int code);
 }

@@ -11,10 +11,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <javacpp.platform.root></javacpp.platform.root>
-        <javacpp.cppbuild.skip>false</javacpp.cppbuild.skip> <!-- To skip execution of cppbuild.sh: -Djavacpp.cppbuild.skip=true -->
+<!--        <javacpp.cppbuild.skip>true</javacpp.cppbuild.skip> &lt;!&ndash; To skip execution of cppbuild.sh: -Djavacpp.cppbuild.skip=true &ndash;&gt;-->
         <javacpp.parser.skip>true</javacpp.parser.skip>     <!-- To skip header file parsing phase: -Djavacpp.parser.skip=true  -->
         <javacpp.compiler.skip>false</javacpp.compiler.skip> <!-- To skip native compilation phase: -Djavacpp.compiler.skip=true -->
-        <javacpp.platform.compiler></javacpp.platform.compiler>
+        <javacpp.platform.compiler>cl</javacpp.platform.compiler>
         <win10.SDK.Path>C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0</win10.SDK.Path>
         <winToastWrapperProjectPath>D:\Project\WinToastWrapper\WinToastWrapper</winToastWrapperProjectPath>
         <javacpp.platform>windows-x86_64</javacpp.platform>
@@ -70,6 +70,7 @@
                         <compilerOption>/std:c++17</compilerOption>
 <!--                        <compilerOption>/EHsc</compilerOption>-->
                     </compilerOptions>
+                    <copyLibs>true</copyLibs>
                 </configuration>
                 <executions>
                     <execution>
@@ -93,34 +94,37 @@
                         <configuration>
                             <skip>${javacpp.compiler.skip}</skip>
                             <classOrPackageNames>
-                                <classOrPackageName>icu.ootime.jwintoast.javacpp.*</classOrPackageName>
-                                <!--<classOrPackageName>com.wintosat.global.WinToastLib</classOrPackageName>-->
-                                <!--<classOrPackageName>com.wintosat.IWinToastHandler</classOrPackageName>-->
-                                <!--<classOrPackageName>com.wintosat.WinToastTemplate</classOrPackageName>-->
+                                <classOrPackageName>icu.ootime.jwintoast.javacpp.**</classOrPackageName>
                             </classOrPackageNames>
-                            <copyLibs>true</copyLibs>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*.obj</exclude>
+                        <exclude>**/*.exp</exclude>
+                        <exclude>**/*.lib</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-    <profiles>
-        <profile>
-            <id>runTimeBuild</id>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                        <includes>
-                            <include>**/*.dll</include>
-                        </includes>
-                        <targetPath>
-                            ${project.build.outputDirectory}/icu/ootime/jwintoast
-                        </targetPath>
-                    </resource>
-                </resources>
-            </build>
-        </profile>
-    </profiles>
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>runTimeBuild</id>-->
+<!--            <build>-->
+<!--                <resources>-->
+<!--                    <resource>-->
+<!--                        <targetPath></targetPath>-->
+<!--                        <excludes></excludes>-->
+<!--                    </resource>-->
+<!--                </resources>-->
+<!--            </build>-->
+<!--        </profile>-->
+<!--    </profiles>-->
 </project>

@@ -115,4 +115,12 @@ final public class HMap implements Map<String,String> {
             consumer.accept(key,val);
         }
     }
+
+    public HStringMap gethStringMap() {
+        return hStringMap;
+    }
+
+    public void sethStringMap(HStringMap hStringMap) {
+        this.hStringMap = hStringMap;
+    }
 }

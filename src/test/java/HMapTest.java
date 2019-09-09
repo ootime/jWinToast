@@ -1,17 +1,16 @@
 import icu.ootime.jwintoast.HMap;
-import icu.ootime.jwintoast.javacpp.HString;
-import icu.ootime.jwintoast.javacpp.HStringMap;
-import org.bytedeco.javacpp.CharPointer;
+import icu.ootime.jwintoast.JWinToast;
+import icu.ootime.jwintoast.handler.JWinToastHandler;
+import icu.ootime.jwintoast.xml.XmlJWinToastTemplate;
+import icu.ootime.jwintoast.xml.XmlToast;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Map;
 
 public class HMapTest {
 
     @Test
-    public void mapPut_Get(){
+    public void mapPut_Get() throws Exception {
         HMap hmp=new HMap();
         hmp.put("ceshi","Hellworld1");
         hmp.put("ceshi2","Hellworld2");
@@ -21,5 +20,6 @@ public class HMapTest {
         System.out.println(hmp.get("ceshi1"));
         System.out.println(Arrays.toString(hmp.values().toArray()));
         System.out.println(hmp.size());
+//        new JWinToastTemplate().l().duration(1);
     }
 }
