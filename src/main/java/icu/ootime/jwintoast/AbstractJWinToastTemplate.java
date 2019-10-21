@@ -1,15 +1,16 @@
 package icu.ootime.jwintoast;
 
+import icu.ootime.jwintoast.handler.WinToastHandler;
 import icu.ootime.jwintoast.javacpp.WinToastTemplate;
 import org.bytedeco.javacpp.CharPointer;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class AbstractJWinToastTemplate implements Template<AbstractJWinToastTemplate>{
+public abstract class AbstractJWinToastTemplate<T> implements Template<AbstractJWinToastTemplate>{
 
     private WinToastTemplate toastTemplate;
 
-    private ToastHandler toastHandler;
+    private WinToastHandler toastHandler;
 
     public AbstractJWinToastTemplate(){
         this.toastTemplate=new WinToastTemplate();
@@ -49,7 +50,7 @@ public abstract class AbstractJWinToastTemplate implements Template<AbstractJWin
     }
 
     @Override
-    public ToastHandler getHandler() {
+    public WinToastHandler getHandler() {
         return this.toastHandler;
     }
 
@@ -58,7 +59,7 @@ public abstract class AbstractJWinToastTemplate implements Template<AbstractJWin
         return this.toastTemplate;
     }
 
-    public void setToastHandler(ToastHandler toastHandler) {
+    public void setToastHandler(WinToastHandler toastHandler) {
         this.toastHandler = toastHandler;
     }
 }

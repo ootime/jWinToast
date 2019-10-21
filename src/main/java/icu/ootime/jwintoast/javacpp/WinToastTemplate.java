@@ -1,9 +1,7 @@
 package icu.ootime.jwintoast.javacpp;
 
 import icu.ootime.jwintoast.javacpp.presets.WinToastLib;
-import org.bytedeco.javacpp.CharPointer;
-import org.bytedeco.javacpp.Loader;
-import org.bytedeco.javacpp.Pointer;
+import org.bytedeco.javacpp.*;
 import org.bytedeco.javacpp.annotation.*;
 
 @Properties(inherit = WinToastLib.class)
@@ -25,14 +23,14 @@ public class WinToastTemplate extends Pointer {
 
     public native  void setFirstLine(@Const @StdWString CharPointer text);
     public native void setTextField(@Const @StdWString CharPointer text,@Cast("WinToastTemplate::TextField") int FirstLine);
-    public native void addAction(@Const @StdWString CharPointer label);
+    public native void addAction(@ByRef @Const @StdWString CharPointer label);
     public native void setAttributionText(@Const @StdWString CharPointer text);
 
     public native void setDuration(@Cast("WinToastTemplate::Duration") int duration);
 
     public native void setImagePath(@Const @StdWString CharPointer imagepath);
 
-    public native  void setExpiration(int millisecondsFromNow);
+    public native  void setExpiration( int millisecondsFromNow);
 
     public native void LoadStringToXml(@Const @StdWString CharPointer strxml);
 

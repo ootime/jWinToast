@@ -1,5 +1,6 @@
 package icu.ootime.jwintoast;
 
+import icu.ootime.jwintoast.handler.WinToastHandler;
 import icu.ootime.jwintoast.javacpp.WinToastTemplate;
 
 import java.util.concurrent.TimeUnit;
@@ -16,7 +17,7 @@ public interface Template<E> {
 
    E addAction(String text);
 
-   ToastHandler getHandler();
+   WinToastHandler getHandler();
 
    WinToastTemplate  getTemplate();
 

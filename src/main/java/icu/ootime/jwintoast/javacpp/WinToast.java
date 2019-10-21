@@ -16,7 +16,7 @@ public class WinToast  extends Pointer {
     public static native WinToast instance();
     public native @Cast("uint32_t") int showToast(
             @Const @ByRef WinToastTemplate winToastTemplate,
-            IWinToastHandler iWinToastHandler,
+           @Cast("WinToastLib::IWinToastHandler*") IWinToastHandler iWinToastHandler,
            @Cast("WinToastLib::WinToast::WinToastError *") IntPointer erro);
 
 //    public native void notifier2(@Cast("bool *") boolean sessed,@ByRef HString hString);

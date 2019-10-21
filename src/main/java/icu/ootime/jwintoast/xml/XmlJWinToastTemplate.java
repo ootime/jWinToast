@@ -4,6 +4,7 @@ package icu.ootime.jwintoast.xml;
 import icu.ootime.jwintoast.AbstractJWinToastTemplate;
 import icu.ootime.jwintoast.HMap;
 import icu.ootime.jwintoast.handler.JWinToastHandler;
+import icu.ootime.jwintoast.handler.WinToastHandler;
 import org.bytedeco.javacpp.CharPointer;
 
 import java.util.concurrent.TimeUnit;
@@ -22,7 +23,7 @@ public class XmlJWinToastTemplate extends AbstractJWinToastTemplate implements X
     }
 
     @Override
-    public XmlJWinToastTemplate handler(JWinToastHandler handler){
+    public XmlJWinToastTemplate handler(WinToastHandler handler){
         this.setToastHandler(handler);
         return this;
     }
@@ -34,7 +35,6 @@ public class XmlJWinToastTemplate extends AbstractJWinToastTemplate implements X
     }
 
     @Override
-    @Deprecated
     public AbstractJWinToastTemplate expiration(TimeUnit unit, long time) {
         return super.expiration(unit, time);
     }

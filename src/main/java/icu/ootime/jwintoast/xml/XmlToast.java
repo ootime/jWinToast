@@ -42,9 +42,5 @@ public class XmlToast {
             this.setAppTag(tag);
             return this;
         }
-
-        public XmlJWinToastWapper data(HMap hMap){
-            return this;
-        }
     }
 }

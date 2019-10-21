@@ -1,5 +1,6 @@
 package icu.ootime.jwintoast;
 
+import icu.ootime.jwintoast.handler.JWinToastHandler;
 import icu.ootime.jwintoast.javacpp.HStringMap;
 import org.bytedeco.javacpp.CharPointer;
 import org.bytedeco.javacpp.IntPointer;
@@ -11,7 +12,7 @@ public abstract class AbstractJWinToast implements Toast ,WinToast {
     private icu.ootime.jwintoast.javacpp.WinToast winToast;
     public AbstractJWinToast(Template toastTemplate){
         this.template=toastTemplate;
-        winToast=new icu.ootime.jwintoast.javacpp.WinToast();
+        winToast=icu.ootime.jwintoast.javacpp.WinToast.instance();
     }
 
     public AbstractJWinToast(){
@@ -56,8 +57,8 @@ public abstract class AbstractJWinToast implements Toast ,WinToast {
 
     @Override
     public boolean show() throws Exception {
-        IntPointer errocode = new IntPointer(0);
-        toastid=winToast.showToast(template.getTemplate(),template.getHandler(),errocode);
+        IntPointer errocode = new IntPointer(1);
+        toastid=winToast.showToast(template.getTemplate(),new JWinToastHandler(template.getHandler()),errocode);
         if(errocode.get()!=0){
             throw new Exception(this.getError(errocode.get()));
         }
